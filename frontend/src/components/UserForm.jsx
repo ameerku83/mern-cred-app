@@ -10,7 +10,7 @@ const UserForm = () => {
 
   const onSubmit = data => {
     axios.post('https://mern-cred-backend.onrender.com/users', data)
-      .then(() => navigate('/'))
+      .then(() => navigate('/'),alert("added successfully"))
       .catch(error => console.error(error));
   };
 
