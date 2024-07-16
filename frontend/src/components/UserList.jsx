@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Button, Container, Row, Table } from 'react-bootstrap';
+import { Button,Row, Table } from 'react-bootstrap';
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {   
-    axios.get('http://localhost:5000/users')
+    axios.get('https://mern-cred-backend.onrender.com/users')
       .then(response => setUsers(response.data))
       .catch(error => console.error(error));
   }, []);
 
   const deleteUser = id => {
-    axios.delete(`http://localhost:5000/users/${id}`)
+    axios.delete(`https://mern-cred-backend.onrender.com/users/${id}`)
       .then(() => setUsers(users.filter(user => user._id !== id)))
       .catch(error => console.error(error));
   };

@@ -9,7 +9,7 @@ const UserForm = () => {
   const navigate = useNavigate();
 
   const onSubmit = data => {
-    axios.post('http://localhost:5000/users', data)
+    axios.post('https://mern-cred-backend.onrender.com/users', data)
       .then(() => navigate('/'))
       .catch(error => console.error(error));
   };

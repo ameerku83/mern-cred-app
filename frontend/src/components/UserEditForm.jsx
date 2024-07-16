@@ -10,7 +10,7 @@ const UserEditForm = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/users/${id}`)
+    axios.get(`https://mern-cred-backend.onrender.com/users/${id}`)
       .then(response => {
         setUser(response.data);
         setValue('name', response.data.name);
@@ -21,7 +21,7 @@ const UserEditForm = () => {
   }, [id, setValue]);
 
   const onSubmit = data => {
-    axios.put(`http://localhost:5000/users/${id}`, data)
+    axios.put(`https://mern-cred-backend.onrender.com/users/${id}`, data)
       .then(() => navigate('/'))
       .catch(error => console.error(error));
   };
